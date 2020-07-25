@@ -1,30 +1,33 @@
 <!-- component -->
-<div class=" bg-fixed bg-cover h-screen w-screen" style="background-image: url('assets/images/login.jpg');">
-    <div class="mx-64 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
-        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-            <div class="form-group mb-4">
-                <label class="block text-grey-darker text-sm font-bold mb-2" for="username">
-                    Username
-                </label>
-                <input formControlName="username" class="form-control shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker" id="username"
-                    type="text" placeholder="Username">
-            </div>
-            <div class=" form-group mb-6">
-                <label class="block text-grey-darker text-sm font-bold mb-2" for="password">
-                    Password
-                </label>
-                <input formControlName="password" class="form-control shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3"
-                    id="password" type="password" placeholder="*********">
-                <p class="text-red-300 text-xs italic">Please choose a password.</p>
-            </div>
-            <div class="form-group flex items-center justify-between">
-                <button (click)="onSubmit()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="button">
-                    Sign In
-                </button>
-                <a class="inline-block align-baseline font-bold text-sm text-blue-600 hover:text-blue-700" href="#">
-                    Register
-                </a>
-            </div>
-        </form>
-    </div>
+<div class="mt-24"></div>
+<div class="body mx-64 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
+    <h2 class="text-md font-bold mb-4">Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-group mb-4">
+            <label class="block text-grey-darker text-sm font-bold mb-2" for="username">
+                Username
+            </label>
+            <input formControlName="username"
+                class="form-control shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"
+                id="username" type="text" placeholder="Username">
+        </div>
+        <div class=" form-group mb-6">
+            <label class="block text-grey-darker text-sm font-bold mb-2" for="password">
+                Password
+            </label>
+            <input formControlName="password"
+                class="form-control shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3"
+                id="password" type="password" placeholder="*********">
+            <p class="text-red-300 text-xs italic">Please choose a password.</p>
+        </div>
+        <div class="form-group flex items-center justify-between">
+            <button (click)="onSubmit()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                type="button">
+                Sign In
+            </button>
+            <a class="inline-block align-baseline font-bold text-sm text-blue-600 hover:text-blue-700" href="#">
+                Register
+            </a>
+        </div>
+    </form>
 </div>
