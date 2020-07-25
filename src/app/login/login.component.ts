@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
         this.loginForm = this.formBuilder.group({
             username: ['', Validators.required],
             password: ['', Validators.required]
-        })
+        });
     }
 
     get form() {
@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
                 this.router.navigate(['']);
             },
             error => {
-                
+
             }
         )
     }

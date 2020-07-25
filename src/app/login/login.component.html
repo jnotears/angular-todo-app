@@ -1,7 +1,7 @@
 <!-- component -->
 <div class="mt-24"></div>
-<div class="body mx-64 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
-    <h2 class="text-md font-bold mb-4">Login</h2>
+<div class="body bg-white shadow-md rounded mx-64 px-8 pt-6 pb-8 mb-4 flex flex-col">
+    <h2 class="text-lg font-bold mb-4">Login</h2>
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <div class="form-group mb-4">
             <label class="block text-grey-darker text-sm font-bold mb-2" for="username">
@@ -25,7 +25,7 @@
                 type="button">
                 Sign In
             </button>
-            <a class="inline-block align-baseline font-bold text-sm text-blue-600 hover:text-blue-700" href="#">
+            <a class="inline-block align-baseline font-bold text-sm text-blue-600 hover:text-blue-700" routerLink="/register">
                 Register
             </a>
         </div>
