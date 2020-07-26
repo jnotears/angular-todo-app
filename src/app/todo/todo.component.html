@@ -1,0 +1,38 @@
+<div class="mt-24"></div>
+<div class="bg-gray-100 rounded flex flex-col mx-64 px-8 pt-6 pb-8">
+    <div class="text-lg font-bold pb-4">Todo List</div>
+    <table class="table-auto">
+        <thead>
+            <tr>
+                <th class="px-4 py-2"></th>
+                <th class="px-4 py-2">Title</th>
+                <th class="px-4 py-2">Description</th>
+                <th class="px-4 py-2"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of todo" [ngSwitch]="item.status" class="">
+                <ng-container *ngSwitchCase="'done'">
+                    <td>
+                        <input type="checkbox" checked (click)="tongleStatus($event, item)">
+                    </td>
+                    <td class="line-through">{{item.title}}</td>
+                    <td class="line-through">{{item.description}}</td>
+                    <td>
+                        <button class="bg-red-400 hover:bg-red-600 rounded border px-3 py-1" title="Delete Todo">x</button>
+                    </td>
+                </ng-container>
+                <ng-container *ngSwitchCase="'new'">
+                    <td>
+                        <input type="checkbox" (click)="tongleStatus($event, item)">
+                    </td>
+                    <td>{{item.title}}</td>
+                    <td>{{item.description}}</td>
+                    <td>
+                        <button class="bg-red-400 hover:bg-red-600 rounded border px-3 py-1" title="Delete Todo">x</button>
+                    </td>
+                </ng-container>
+            </tr>
+        </tbody>
+    </table>
+</div>

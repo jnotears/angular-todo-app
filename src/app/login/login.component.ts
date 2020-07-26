@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
         }
         this.authService.login(this.form.username.value, this.form.password.value).subscribe(
             data => {
-                this.router.navigate(['']);
+                this.router.navigate(['todo']);
             },
             error => {
 
