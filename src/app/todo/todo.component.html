@@ -1,7 +1,7 @@
 <div class="mt-24"></div>
-<div class="bg-gray-100 rounded flex flex-col mx-64 px-8 pt-6 pb-8">
-    <div class="text-lg font-bold pb-4">Todo List</div>
-    <table class="table-auto">
+<div class="bg-gray-200 rounded flex flex-col mx-64 px-8 pt-6 pb-8">
+    <div class="text-lg font-bold pb-4 w-full text-center">Todo List</div>
+    <table class="table-auto w-full">
         <thead>
             <tr>
                 <th class="px-4 py-2"></th>
@@ -11,25 +11,25 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let item of todo" [ngSwitch]="item.status" class="">
+            <tr *ngFor="let item of todo" [ngSwitch]="item.status">
                 <ng-container *ngSwitchCase="'done'">
-                    <td>
+                    <td class="bg-gray-300 rounded-l px-2 py-2">
                         <input type="checkbox" checked (click)="tongleStatus($event, item)">
                     </td>
-                    <td class="line-through">{{item.title}}</td>
-                    <td class="line-through">{{item.description}}</td>
-                    <td>
-                        <button class="bg-red-400 hover:bg-red-600 rounded border px-3 py-1" title="Delete Todo">x</button>
+                    <td class="bg-gray-300 line-through text-gray-500 px-2 py-2">{{item.title}}</td>
+                    <td class="bg-gray-300 line-through text-gray-500 px-2 py-2">{{item.description}}</td>
+                    <td class="bg-gray-300 rounded-r px-2 py-2">
+                        <button (click)="delete(item.id)" class="bg-red-700 hover:bg-red-400 rounded border px-3 py-1" title="Delete Todo">x</button>
                     </td>
                 </ng-container>
                 <ng-container *ngSwitchCase="'new'">
-                    <td>
+                    <td class="bg-gray-300 rounded-l px-2 py-2">
                         <input type="checkbox" (click)="tongleStatus($event, item)">
                     </td>
-                    <td>{{item.title}}</td>
-                    <td>{{item.description}}</td>
-                    <td>
-                        <button class="bg-red-400 hover:bg-red-600 rounded border px-3 py-1" title="Delete Todo">x</button>
+                    <td class="bg-gray-300 px-2 py-2">{{item.title}}</td>
+                    <td class="bg-gray-300 px-2 py-2">{{item.description}}</td>
+                    <td class="bg-gray-300 rounded-r px-2 py-2">
+                        <button (click)="delete(item.id)" class="bg-red-700 hover:bg-red-400 rounded border px-3 py-1" title="Delete Todo">x</button>
                     </td>
                 </ng-container>
             </tr>

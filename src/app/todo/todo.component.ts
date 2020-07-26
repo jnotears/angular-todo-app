@@ -37,4 +37,12 @@ export class TodoComponent implements OnInit {
         }
         this.todoService.update(item).subscribe();
     }
+
+    delete(id: number){
+        this.todoService.delete(id).subscribe(
+            data => {
+                this.getAllByUid();
+            }
+        );
+    }
 }
