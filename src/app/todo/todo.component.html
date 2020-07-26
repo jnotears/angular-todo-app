@@ -1,3 +1,14 @@
+<div class="md:flex items-center justify-between py-2 px-8 md:px-12">
+    <div></div>
+    <div class="flex flex-col md:flex-row hidden md:block -mx-2">
+      <a href="#"
+        class="text-gray-800 rounded hover:bg-gray-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2">Home</a>
+      <a href="#"
+        class="text-gray-800 rounded hover:bg-gray-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2">About</a>
+      <a (click)="logout()"
+        class="text-gray-800 rounded hover:bg-gray-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2">Logout</a>
+    </div>
+  </div>
 <div class="mt-24"></div>
 <div class="bg-gray-200 rounded flex flex-col mx-64 px-8 pt-6 pb-8">
     <div class="text-lg font-bold pb-4 w-full text-center">Todo List</div>
@@ -19,7 +30,8 @@
                     <td class="bg-gray-300 line-through text-gray-500 px-2 py-2">{{item.title}}</td>
                     <td class="bg-gray-300 line-through text-gray-500 px-2 py-2">{{item.description}}</td>
                     <td class="bg-gray-300 rounded-r px-2 py-2">
-                        <button (click)="delete(item.id)" class="bg-red-700 hover:bg-red-400 rounded border px-3 py-1" title="Delete Todo">x</button>
+                        <button (click)="delete(item.id)" class="bg-red-700 hover:bg-red-400 rounded border px-3 py-1"
+                            title="Delete Todo">x</button>
                     </td>
                 </ng-container>
                 <ng-container *ngSwitchCase="'new'">
@@ -29,7 +41,8 @@
                     <td class="bg-gray-300 px-2 py-2">{{item.title}}</td>
                     <td class="bg-gray-300 px-2 py-2">{{item.description}}</td>
                     <td class="bg-gray-300 rounded-r px-2 py-2">
-                        <button (click)="delete(item.id)" class="bg-red-700 hover:bg-red-400 rounded border px-3 py-1" title="Delete Todo">x</button>
+                        <button (click)="delete(item.id)" class="bg-red-700 hover:bg-red-400 rounded border px-3 py-1"
+                            title="Delete Todo">x</button>
                     </td>
                 </ng-container>
             </tr>

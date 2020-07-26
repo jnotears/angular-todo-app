@@ -7,16 +7,19 @@ import { User } from '../models/user';
     providedIn: 'root'
 })
 export class AuthService {
+    public currentUser: number;
     public hostUrl = 'http://localhost:3000';
     constructor(
         private http: HttpClient
-    ) { }
+    ) { 
+        this.currentUser = this.currentUid;
+    }
 
-    public get currentUid(): number{
+    public get currentUid(): number {
         return parseInt(localStorage.getItem('uid'));
     }
 
-    public get access_token(){
+    public get access_token() {
         return localStorage.getItem('access_token');
     }
 
@@ -56,5 +59,6 @@ export class AuthService {
     logout() {
         localStorage.removeItem('uid');
         localStorage.removeItem('access_token');
+        return true;
     }
 }

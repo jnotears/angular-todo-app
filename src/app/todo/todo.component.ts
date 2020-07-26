@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Todo } from '../models/todo';
 import { TodoService } from '../services/todo.service'
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 enum Status {
     done = 'done',
     new = 'new',
@@ -14,8 +16,14 @@ export class TodoComponent implements OnInit {
     status = Status;
 
     constructor(
-        private todoService: TodoService
-    ) { }
+        private todoService: TodoService,
+        private authService: AuthService,
+        private router: Router
+    ) {
+        if (!this.authService.currentUid) {
+            this.router.navigate(['login']);
+        }
+    }
 
     ngOnInit() {
         this.getAllByUid();
@@ -29,20 +37,26 @@ export class TodoComponent implements OnInit {
         )
     }
 
-    tongleStatus(e, item){
-        if(e.target.checked){
+    tongleStatus(e, item) {
+        if (e.target.checked) {
             item.status = this.status.done;
-        }else{
+        } else {
             item.status = this.status.new;
         }
         this.todoService.update(item).subscribe();
     }
 
-    delete(id: number){
+    delete(id: number) {
         this.todoService.delete(id).subscribe(
             data => {
                 this.getAllByUid();
             }
         );
+    }
+
+    logout() {
+        if (this.authService.logout()) {
+            this.router.navigate(['login']);
+        }
     }
 }
