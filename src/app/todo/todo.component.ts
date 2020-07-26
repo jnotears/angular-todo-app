@@ -59,4 +59,8 @@ export class TodoComponent implements OnInit {
             this.router.navigate(['login']);
         }
     }
+
+    addItem(todo: Todo){
+        this.todo.push(todo);
+    }
 }

@@ -9,13 +9,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TodoComponent } from './todo/todo.component';
 import { JwtInterceptor } from './helper/jwt.interceptor';
+import { AddNewTodoComponent } from './todo/add-new-todo/add-new-todo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    TodoComponent
+    TodoComponent,
+    AddNewTodoComponent
   ],
   imports: [
     BrowserModule,
